@@ -24,7 +24,7 @@ class Wrapper extends Component{
         <Router>
           <Fragment>
             <Route path='/' exact component={Intro} />
-            <Route path='/detail' component={MovieDetail} />
+            <Route path='/detail/:id' component={MovieDetail} />
           </Fragment>
         </Router>
       </Provider>      

@@ -15,3 +15,14 @@ export const getMoviesFailure = error => ({
     payload: error,
   }
 );
+
+export const getMovieDetailRequest = id => ({
+  type: 'GET_MOVIE_DETAIL_REQUEST',
+  payload: id,
+});
+
+export const getMovieDetailSuccess = data => ({
+  type: 'GET_MOVIE_DETAIL_SUCCESS',
+  payload: data,
+}
+);

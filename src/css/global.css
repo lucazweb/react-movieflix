@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches');
+@import url('https://fonts.googleapis.com/css?family=Mukta');
+
 body{
     background: #222;
     font-family: sans-serif;
+}
+h1, h2, h3{
+  font-family: 'Staatliches', cursive;
+}
+
+p, span{
+  font-family: 'Mukta', sans-serif;
 }

@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import Intro from './components/Intro';
+import React from 'react';
+import store from './store';
+import { Provider  } from 'react-redux';
+import Wrapper from './Wrapper';
 
-
-class App extends Component {
-  render() {
-    return (
-      <Intro />
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <Wrapper />
+  </Provider>
+);
 
 export default App;

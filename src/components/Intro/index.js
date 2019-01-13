@@ -1,19 +1,28 @@
-import React from 'react';
-import { Appbox, Movie } from './style';
+import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { MainTitle, Appbox, Movie } from './style';
 
-const Mock = [1, 2, 3, 4, 5];
-
-const Intro = () => (
+const Intro = ({movies}) => (
+  <Fragment>
+    <MainTitle> React Movieflix</MainTitle>
     <Appbox>
         {
-            Mock.map((movie) => (
-                <Movie>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEkvZ3dr8qm2AIGRqRQ9yYK9bDnk_i3ANr0NO3EtFoxgIOdVrbLg" alt="Movie title" title="Movie title" />
-                    <h2> Movie title </h2>
-                </Movie>
-            ))
+         movies!== undefined && movies.map((movie) => (
+            <Movie key={movie.id}>
+              <img src={`http://image.tmdb.org/t/p/w342/${movie.poster_path}` } alt={movie.title} title={movie.title} />
+              <h2> <Link to='/detail' > {movie.title} </Link> </h2>
+            </Movie>
+          ))
         }
     </Appbox>
+  </Fragment>
 );
 
-export default Intro;
+const mapStateToProps = (state) => {
+  return {
+    movies: state.movies.data,
+  }
+};
+
+export default connect(mapStateToProps)(Intro);

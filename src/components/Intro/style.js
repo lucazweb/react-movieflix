@@ -7,6 +7,7 @@ export const MainTitle = styled.h1`
   color: white;
   margin: 15px auto 5px auto;
   padding:0;
+  background-image:url('./assets/logo.png');
 `;
 
 export const Appbox = styled.div`
@@ -30,12 +31,13 @@ export const Movie = styled.div`
     margin: 10px;
     background: #ccc;
     box-shadow: 1px 1px 5px black;
-    transition:all ease 0.3s;
+    transition:all ease 0.6s;
+    filter: saturate(50%) drop-shadow(16px 16px 20px black);
     &:hover{
         cursor: pointer;
         box-shadow: 1px 1px 8px black;
         img{
-            opacity: 0.9;
+            filter: saturate(160%) drop-shadow(6px 6px 20px black);
         }
     }
     h2{

@@ -5,17 +5,20 @@ import { connect } from 'react-redux';
 import * as movieActions from '../../store/actions/movies';
 import { Link } from 'react-router-dom';
 import { MainTitle, Appbox, Movie } from './style';
+import logo from '../../assets/logo.png';
 
 const Intro = ({movies, getMovieDetailRequest}) => (
   <Fragment>
-    <MainTitle> React Movieflix</MainTitle>
+    <MainTitle> <img title="React MovieFlix by @lucazweb" alt="React MovieFlix" src={logo} /> </MainTitle>
     <Appbox>
         {
          movies!== undefined && movies.map((movie) => (
-            <Movie key={movie.id}>
-              <img src={`http://image.tmdb.org/t/p/w342/${movie.poster_path}` } alt={movie.title} title={movie.title} />
-              <h2> <Link to={`/detail/${movie.id}`} onClick={() => getMovieDetailRequest(movie.id)}> {movie.title} </Link> </h2>
-            </Movie>
+            <Link to={`/detail/${movie.id}`} onClick={() => getMovieDetailRequest(movie.id)}>
+                <Movie key={movie.id}>
+                  <img src={`http://image.tmdb.org/t/p/w342/${movie.poster_path}` } alt={movie.title} title={movie.title} />
+                  <h2>  {movie.title}  </h2>
+                </Movie>
+            </Link>
           ))
         }
     </Appbox>

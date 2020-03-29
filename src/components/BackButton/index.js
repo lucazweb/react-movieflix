@@ -1,8 +1,6 @@
-import React from 'react';
-import { BackButtonComponent } from './style';
+import React from "react";
+import { BackButtonComponent } from "./style";
 
-const BackButton = () => (
-  <BackButtonComponent> Voltar </BackButtonComponent>
-);
+const BackButton = () => <BackButtonComponent> Voltar </BackButtonComponent>;
 
 export default BackButton;

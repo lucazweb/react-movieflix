@@ -1,6 +1,6 @@
-import React, { useEffect, Component } from 'react';
+import React, { useEffect } from 'react';
 import store from './store';
-import { Provider, connect } from 'react-redux';
+import { Provider} from 'react-redux';
 import { getMoviesRequest } from './store/actions/movies';
 import Routes from './Routes';
 
@@ -18,13 +18,3 @@ const Wrapper = () => {
 }
 
 export default Wrapper;
-
-// const mapStateToProps = (state) => {
-//   return {
-//     movies: state.data,
-//   }
-// }
-
-// const mapDispatchToProps = dispatch => bindActionCreators(movieActions, dispatch);
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Wrapper);

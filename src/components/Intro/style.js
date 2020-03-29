@@ -1,24 +1,13 @@
 import styled from 'styled-components';
 
-export const MainTitle = styled.h1`
-  font-size: 2em;
-  text-shadow: 2px 2px 2px black;
-  text-align:center;
-  color: white;
-  margin: 15px auto 5px auto;
-  padding:0;
-  background-image:url('./assets/logo.png');
-`;
-
-export const Appbox = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 90%;
-    padding: 10px;
-    margin:auto;
-    height: 80vh;
+export const MovieRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 90%;
+  @media only screen and (max-width: 768px){
+    flex-direction: column;
+  }
 `;
 
 export const Movie = styled.div`
@@ -33,6 +22,7 @@ export const Movie = styled.div`
     box-shadow: 1px 1px 5px black;
     transition:all ease 0.6s;
     filter: saturate(50%) drop-shadow(16px 16px 20px black);
+    
     &:hover{
         cursor: pointer;
         box-shadow: 1px 1px 8px black;
@@ -40,24 +30,45 @@ export const Movie = styled.div`
             filter: saturate(160%) drop-shadow(6px 6px 20px black);
         }
     }
-    h2{
-        position: absolute;
-        bottom: 0;
-        margin:0;
-        font-size: 0.8em;
-        background: rgba(0, 0, 0, 0.8);
-        color: #ccc;
-        width: 100%;
-        padding: 5px;
-        text-align: center;
-        font-family: font-family: 'Mukta', sans-serif !important;
-        a{
-          color: #ccc;
-          text-decoration: none;
-        }
+
+    @media only screen and (max-width: 768px){
+      width: 100%;
+      height: 70vh;
     }
-    img{
-        width: 100%;
-        height: auto;
-    }
+`
+
+export const MovieTitle = styled.h2`
+  position: absolute;
+  bottom: 0;
+  margin:0;
+  font-size: 0.8em;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ccc;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  font-family: font-family: 'Mukta', sans-serif !important;
+  a{
+    color: #ccc;
+    text-decoration: none;
+  }
+`;
+
+
+export const Appbox = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 90%;
+    padding: 10px;
+    margin:auto;
+    height: 80vh;
+`;
+
+
+
+export const MovieImage = styled.img`
+  width: 100%;
+  height: auto;
 `
